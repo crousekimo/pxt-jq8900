@@ -1,7 +1,5 @@
 //% weight=0 color=#338899 icon="\uf0ad" block="jq8900"
 namespace jq8900 {
-let readserialdata='';
-
     //% blockId=jq8900_setMicrobit block="Initialize Microbit |TX %tx|RX %rx|Baud rate %baudrate "
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
@@ -17,7 +15,7 @@ let readserialdata='';
     }
 
     //% blockId=playcurrentmp3 block="JQ8900 play current mp3"
-    //% weight=100
+    //% weight=95
     export function playcurrentmp3() {
             let _a=pins.createBuffer(4)
     	    _a[0] = 170
@@ -27,7 +25,7 @@ let readserialdata='';
     	    serial.writeBuffer(_a)
     }    
     //% blockId=pausemp3 block="JQ8900 pause mp3"
-    //% weight=100
+    //% weight=96
     export function pausemp3() {
             let _a=pins.createBuffer(4)
     	    _a[0] = 170
@@ -37,7 +35,7 @@ let readserialdata='';
     	    serial.writeBuffer(_a)
     }    
     //% blockId=stopmp3 block="JQ8900 stop mp3"
-    //% weight=100
+    //% weight=97
     export function stopmp3() {
             let _a=pins.createBuffer(4)
     	    _a[0] = 170
@@ -47,7 +45,7 @@ let readserialdata='';
     	    serial.writeBuffer(_a)
     }
     //% blockId=previousmp3 block="JQ8900 play previous mp3"
-    //% weight=100
+    //% weight=98
     export function previousmp3() {
             let _a=pins.createBuffer(4)
     	    _a[0] = 170
@@ -57,7 +55,7 @@ let readserialdata='';
     	    serial.writeBuffer(_a)
     }
     //% blockId=nextmp3 block="JQ8900 play next mp3"
-    //% weight=100
+    //% weight=99
     export function nextmp3() {
             let _a=pins.createBuffer(4)
     	    _a[0] = 170
@@ -66,8 +64,8 @@ let readserialdata='';
             _a[3] = 176
     	    serial.writeBuffer(_a)
     }  
-    //% blockId=setmp3vol block="JQ8900 set mp3 (0-20) %id volume"
-    //% weight=100
+    //% blockId=setmp3vol block="JQ8900 play %id mp3"
+    //% weight=101
     export function mp3play(vol:number) {
             let _a=pins.createBuffer(6)
     	    _a[0] = 170
@@ -78,4 +76,5 @@ let readserialdata='';
             _a[5] = 179+vol       
     	    serial.writeBuffer(_a)
     }
+
 }
