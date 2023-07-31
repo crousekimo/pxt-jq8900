@@ -68,13 +68,14 @@ let readserialdata='';
     }  
     //% blockId=setmp3vol block="JQ8900 set mp3 (0-20) %id volume"
     //% weight=100
-    export function setmp3vol(vol:number) {
-            let _a=pins.createBuffer(5)
+    export function mp3play(vol:number) {
+            let _a=pins.createBuffer(6)
     	    _a[0] = 170
-            _a[1] = 13
-            _a[2] = 1
-            _a[3] = vol
-            _a[4] = 190+vol
+            _a[1] = 7
+            _a[2] = 2
+            _a[3] = 0
+            _a[4] = vol
+            _a[5] = 179+vol       
     	    serial.writeBuffer(_a)
     }
 }
