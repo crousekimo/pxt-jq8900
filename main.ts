@@ -16,12 +16,12 @@ let readserialdata='';
         basic.pause(100)
     }
 
-    //% blockId=playmp3 block="JQ8900 play mp3 %id "
+    //% blockId=playcurrentmp3 block="JQ8900 play current mp3"
     //% weight=100
-    export function playmp3(id: number) {
+    export function playcurrentmp3() {
             let _a=pins.createBuffer(4)
     	    _a[0] = 170
-            _a[1] = parseInt(convertToText(id),16)
+            _a[1] = 2
             _a[2] = 0
             _a[3] = 172
     	    serial.writeBuffer(_a)
@@ -73,7 +73,7 @@ let readserialdata='';
     	    _a[0] = 170
             _a[1] = 13
             _a[2] = 1
-            _a[3] = parseInt(convertToText(vol),16)
+            _a[3] = vol
             _a[4] = parseInt("BE",16)+vol
     	    serial.writeBuffer(_a)
     }
