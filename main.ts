@@ -74,7 +74,7 @@ let readserialdata='';
             _a[1] = 13
             _a[2] = 1
             _a[3] = vol
-            _a[4] = parseInt("BE",16)+vol
+            _a[4] = 190+vol
     	    serial.writeBuffer(_a)
     }
 }
