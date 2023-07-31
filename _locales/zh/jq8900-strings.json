@@ -1,0 +1,5 @@
+{
+    "jq8900|block": "JQ8900",
+    "jq8900.jq8900_setMicrobit|block": "設定Microbit |TX %tx|RX %rx|baudrate %baudrate",
+    "jq8900.playmp3|block": "請JQ8900撥放名稱為 %id 的mp3"
+}
