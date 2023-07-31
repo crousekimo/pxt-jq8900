@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh/microbittojq8900-strings.json"
+        "_locales/zh/jq8900-strings.json"
     ],
     "public": true
 }
