@@ -1,4 +1,4 @@
-//% weight=0 color=#331199 icon="\uf0ad" block="jq8900"
+//% weight=0 color=#338899 icon="\uf0ad" block="jq8900"
 namespace jq8900 {
 let readserialdata='';
 
