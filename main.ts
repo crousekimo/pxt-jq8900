@@ -1,13 +1,13 @@
-//% weight=0 color=#331199 icon="\uf0ad" block="microbittojq8900"
-namespace microbittojq8900 {
+//% weight=0 color=#331199 icon="\uf0ad" block="jq8900"
+namespace jq8900 {
 let readserialdata='';
 
-    //% blockId=setMicrobit block="Initialize Microbit |TX %tx|RX %rx|Baud rate %baudrate "
+    //% blockId=jq8900_setMicrobit block="Initialize Microbit |TX %tx|RX %rx|Baud rate %baudrate "
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
     //% weight=102
     //% blockExternalInputs = 1
-    export function setMicrobit(tx: SerialPin, rx: SerialPin, baudrate: BaudRate) {
+    export function jq8900_setMicrobit(tx: SerialPin, rx: SerialPin, baudrate: BaudRate) {
         serial.redirect(
             tx,
             rx,
