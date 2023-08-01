@@ -1,5 +1,12 @@
 //% weight=0 color=#338899 icon="\uf0ad" block="jq8900"
 namespace jq8900 {
+     export enum play_mode {
+        ALL_REPEAT = 1 ,
+        SINGLE_REPEAT = 2,
+        SINGLE_STOP = 3,
+        RANDOM = 4,
+        ORDER_PLAY = 5
+     }
     //% blockId=jq8900_setMicrobit block="Initialize Microbit |TX %tx|RX %rx|Baud rate %baudrate "
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
@@ -101,6 +108,37 @@ namespace jq8900 {
             _a[5] = id
             _a[6] = 197+id       
     	    serial.writeBuffer(_a)
+    }
+
+    //% blockId=mp3mode block="JQ8900 mp3 play mode  %vid "
+    //% weight=101
+    export function mp3mode(id:play_mode) {
+        let _a=pins.createBuffer(5)
+    	_a[0] = 170
+        _a[1] = 24
+        _a[2] = 1
+        if (id==1)
+        {
+            _a[3] = 0
+            _a[4] = 195     
+        }else if (id==2)
+        {
+            _a[3] = 1
+            _a[4] = 196     
+        }else if (id==3)
+        {
+            _a[3] = 2
+            _a[4] = 197     
+        }else if (id==4)
+        {
+            _a[3] = 3
+            _a[4] = 198    
+        }else if (id==5)
+        {
+            _a[3] = 0
+            _a[4] = 202    
+        }
+   	    serial.writeBuffer(_a)
     }
 
 }
