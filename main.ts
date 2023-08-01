@@ -152,15 +152,16 @@ namespace jq8900 {
     export function playmp3mode(id:mp3_mode,sec:number) {
         let _a=pins.createBuffer(6)
     	   _a[0] = 170
-        _a[1] = 35
         _a[2] = 2
         _a[3]=sec/256
         _a[4]=sec%256
          if (id==1)
          {
+              _a[1] = 35
               _a[5]=207+_a[4]
          }else if (id==2)
          {
+              _a[1] = 34
               _a[5]=206+_a[4]
          }
          serial.writeBuffer(_a)
