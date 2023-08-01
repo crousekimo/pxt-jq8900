@@ -7,16 +7,16 @@ namespace jq8900 {
         RANDOM = 4,
         ORDER_PLAY = 5
      }
-    //% blockId=jq8900_setMicrobit block="Initialize Microbit |TX %tx|RX %rx|Baud rate %baudrate "
+    //% blockId=jq8900_setMicrobit block="Initialize Microbit |TX %tx|RX %rx"
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
     //% weight=102
     //% blockExternalInputs = 1
-    export function jq8900_setMicrobit(tx: SerialPin, rx: SerialPin, baudrate: BaudRate) {
+    export function jq8900_setMicrobit(tx: SerialPin, rx: SerialPin) {
         serial.redirect(
             tx,
             rx,
-            baudrate
+            9600
         )
         basic.pause(100)
     }
@@ -73,6 +73,7 @@ namespace jq8900 {
     }  
     //% blockId=mp3play block="JQ8900 play %id mp3"
     //% weight=101
+   //% id.min=1 id.defl=1
     export function mp3play(vol:number) {
             let _a=pins.createBuffer(6)
     	    _a[0] = 170
@@ -84,8 +85,9 @@ namespace jq8900 {
     	    serial.writeBuffer(_a)
     }
 
-        //% blockId=setmp3vol block="JQ8900 set mp3 volumn %vol "
+    //% blockId=setmp3vol block="JQ8900 set mp3 volumn %vol "
     //% weight=101
+        //% vol.min=0 vol.max=30  vol.defl=0
     export function setmp3vol(vol:number) {
             let _a=pins.createBuffer(5)
     	    _a[0] = 170
@@ -98,6 +100,7 @@ namespace jq8900 {
 
     //% blockId=insertmp3 block="JQ8900 insert mp3  %vid "
     //% weight=101
+    //% id.min=1 id.defl=1
     export function insertmp3(id:number) {
             let _a=pins.createBuffer(7)
     	    _a[0] = 170
