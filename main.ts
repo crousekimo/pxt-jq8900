@@ -64,7 +64,7 @@ namespace jq8900 {
             _a[3] = 176
     	    serial.writeBuffer(_a)
     }  
-    //% blockId=setmp3vol block="JQ8900 play %id mp3"
+    //% blockId=mp3play block="JQ8900 play %id mp3"
     //% weight=101
     export function mp3play(vol:number) {
             let _a=pins.createBuffer(6)
@@ -74,6 +74,32 @@ namespace jq8900 {
             _a[3] = 0
             _a[4] = vol
             _a[5] = 179+vol       
+    	    serial.writeBuffer(_a)
+    }
+
+        //% blockId=setmp3vol block="JQ8900 set mp3 volumn %vol "
+    //% weight=101
+    export function setmp3vol(vol:number) {
+            let _a=pins.createBuffer(5)
+    	    _a[0] = 170
+            _a[1] = 19
+            _a[2] = 1
+            _a[3] = vol
+            _a[4] = 190+vol       
+    	    serial.writeBuffer(_a)
+    }
+
+    //% blockId=setmp3vol block="JQ8900 insert mp3  %vid "
+    //% weight=101
+    export function insertmp3(id:number) {
+            let _a=pins.createBuffer(7)
+    	    _a[0] = 170
+            _a[1] = 22
+            _a[2] = 3
+            _a[3] = 2
+            _a[4] = 0
+            _a[5] = id
+            _a[6] = 197+id       
     	    serial.writeBuffer(_a)
     }
 
