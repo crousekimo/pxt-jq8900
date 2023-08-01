@@ -137,7 +137,7 @@ namespace jq8900 {
             _a[4] = 198    
         }else if (id==5)
         {
-            _a[3] = 0
+            _a[3] = 7
             _a[4] = 202    
         }
    	   serial.writeBuffer(_a)
