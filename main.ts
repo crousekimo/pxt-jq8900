@@ -7,6 +7,10 @@ namespace jq8900 {
         RANDOM = 4,
         ORDER_PLAY = 5
      }
+     export enum mp3_mode {
+          fast_forward =1,
+          rewind=2
+     }
     //% blockId=jq8900_setMicrobit block="Microbitc | TX %tx | RX %rx"
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
@@ -143,4 +147,21 @@ namespace jq8900 {
    	   serial.writeBuffer(_a)
     }
 
+     //% blockId=playmp3mode block="JQ8900 mp3 %id %sec sec"
+    //% weight=101
+    export function playmp3mode(id:mp3_mode,sec:number) {
+        let _a=pins.createBuffer(6)
+    	   _a[0] = 170
+        _a[1] = 35
+        _a[2] = 2
+        _a[3]=sec/256
+        _a[4]=sec%256
+         if (id==1)
+         {
+              _a[5]=207+_a[4]
+         }else if (id==2)
+         {
+              _a[5]=206+_a[4]
+         }
+         serial.writeBuffer(_a)
 }
