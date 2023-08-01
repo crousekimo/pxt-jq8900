@@ -7,7 +7,7 @@ namespace jq8900 {
         RANDOM = 4,
         ORDER_PLAY = 5
      }
-    //% blockId=jq8900_setMicrobit block="Initialize Microbitc |TX %tx | RX %rx"
+    //% blockId=jq8900_setMicrobit block="Microbitc | TX %tx | RX %rx"
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
     //% weight=102
