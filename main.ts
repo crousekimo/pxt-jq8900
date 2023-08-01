@@ -11,7 +11,6 @@ namespace jq8900 {
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
     //% weight=102
-    //% blockExternalInputs = 1
     export function jq8900_setMicrobit(tx: SerialPin, rx: SerialPin) {
         serial.redirect(
             tx,
