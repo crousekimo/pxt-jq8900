@@ -89,7 +89,7 @@ namespace jq8900 {
     	    serial.writeBuffer(_a)
     }
 
-    //% blockId=setmp3vol block="JQ8900 insert mp3  %vid "
+    //% blockId=insertmp3 block="JQ8900 insert mp3  %vid "
     //% weight=101
     export function insertmp3(id:number) {
             let _a=pins.createBuffer(7)
