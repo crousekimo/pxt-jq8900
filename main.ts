@@ -1,14 +1,21 @@
 //% weight=0 color=#338899 icon="\uf0ad" block="microbittojq8900"
 namespace microbittojq8900 {
      export enum play_mode {
+        //% block="全部循環"
         ALL_REPEAT = 1 ,
+        //% block="單曲循環"
         SINGLE_REPEAT = 2,
+        //% block="單曲暫停"
         SINGLE_STOP = 3,
+        //% block="隨機撥放"
         RANDOM = 4,
+        //% block="順序撥放"
         ORDER_PLAY = 5
      }
      export enum mp3_mode {
+          //% block="前進"
           fast_forward =1,
+          //% block="後退"
           rewind=2
      }
     //% blockId=jq8900_setMicrobit block="Microbitc | TX %tx | RX %rx"
