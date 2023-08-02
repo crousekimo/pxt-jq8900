@@ -1,15 +1,15 @@
 {
     "jq8900|block": "JQ8900",
-    "jq8900.jq8900_setMicrobit|block": "設定Microbit | TX %tx| RX %rx",
+    "jq8900.jq8900_setMicrobit|block": "設定Microbit | TX %tx | RX %rx ",
     "jq8900.playcurrentmp3|block": "撥放現在的mp3",
     "jq8900.pausemp3|block": "暫停撥放",
     "jq8900.stopmp3|block": "停止撥放",
     "jq8900.previousmp3|block": "撥放前一首歌",
     "jq8900.nextmp3|block": "撥放下一首歌",
-    "jq8900.mp3play|block": "撥放%id的歌",
-    "jq8900.setmp3vol|block": "設定播放音量為(0-30)%vol",
+    "jq8900.mp3play|block": "撥放 %id 的歌",
+    "jq8900.setmp3vol|block": "設定播放音量為(0-30) %vol",
     "jq8900.insertmp3|block": "插入%id的歌",
-    "jq8900.mp3mode|block": "播放模式設為%id",
-    "jq8900.playmp3mode|block": "播放%id %sec 秒",
+    "jq8900.mp3mode|block": "播放模式設為 %id",
+    "jq8900.playmp3mode|block": "播放 %id %sec 秒",
     "jq8900.checkmp3status|block": "是否還在撥放"
 }
