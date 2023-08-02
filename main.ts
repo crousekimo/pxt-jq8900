@@ -14,7 +14,7 @@ namespace jq8900 {
     //% blockId=jq8900_setMicrobit block="Microbitc | TX %tx | RX %rx"
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
-    //% weight=102
+    //% weight=120
     export function jq8900_setMicrobit(tx: SerialPin, rx: SerialPin) {
         serial.redirect(
             tx,
@@ -25,7 +25,7 @@ namespace jq8900 {
     }
 
     //% blockId=playcurrentmp3 block="JQ8900 play current mp3"
-    //% weight=95
+    //% weight=100
     export function playcurrentmp3() {
             let _a=pins.createBuffer(4)
     	       _a[0] = 170
@@ -75,7 +75,7 @@ namespace jq8900 {
     	       serial.writeBuffer(_a)
     }  
     //% blockId=mp3play block="JQ8900 play mp3 %id "
-    //% weight=101
+    //% weight=110
    //% id.min=1 id.defl=1
     export function mp3play(id:number) {
             let _a=pins.createBuffer(6)
@@ -89,7 +89,7 @@ namespace jq8900 {
     }
 
     //% blockId=setmp3vol block="JQ8900 set mp3 volumn %vol "
-    //% weight=101
+    //% weight=109
     //% vol.min=0 vol.max=30  vol.defl=0
     export function setmp3vol(vol:number) {
             let _a=pins.createBuffer(5)
@@ -102,7 +102,7 @@ namespace jq8900 {
     }
 
     //% blockId=insertmp3 block="JQ8900 insert mp3  %id "
-    //% weight=101
+    //% weight=106
     //% id.min=1 id.defl=1
     export function insertmp3(id:number) {
             let _a=pins.createBuffer(7)
@@ -117,7 +117,7 @@ namespace jq8900 {
     }
 
     //% blockId=mp3mode block="JQ8900 mp3 play mode  %id "
-    //% weight=101
+    //% weight=108
     export function mp3mode(id:play_mode) {
         let _a=pins.createBuffer(5)
     	   _a[0] = 170
@@ -148,7 +148,7 @@ namespace jq8900 {
     }
 
      //% blockId=playmp3mode block="JQ8900 mp3 %id %sec sec"
-    //% weight=101
+    //% weight=107
     export function playmp3mode(id:mp3_mode,sec:number) {
         let _a=pins.createBuffer(6)
     	   _a[0] = 170
@@ -165,5 +165,19 @@ namespace jq8900 {
               _a[5]=206+_a[4]
          }
          serial.writeBuffer(_a)
+    }
+     //% blockId=checkmp3status block="JQ8900 status"
+    //% weight=103
+    export function checkmp3status():boolean {
+         let _a = pins.createBuffer(4)
+         _a[0] = 170
+         _a[1] = 1
+         _a[2] = 0
+         _a[3] = 171
+         serial.writeBuffer(_a)
+         basic.pause(100)
+         let _b = serial.readBuffer(5)
+         let _c = _b.getNumber(NumberFormat.UInt8LE, 3)
+         return _c
     }
 }
