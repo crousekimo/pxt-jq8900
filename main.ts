@@ -178,6 +178,9 @@ namespace jq8900 {
          basic.pause(100)
          let _b = serial.readBuffer(5)
          let _c = _b.getNumber(NumberFormat.UInt8LE, 3)
-         return Boolean(_c)
+         if (_c==1)
+              return true
+         else
+              return false
     }
 }
