@@ -166,7 +166,7 @@ namespace jq8900 {
          }
          serial.writeBuffer(_a)
     }
-     //% blockId=checkmp3status block="JQ8900 status"
+     //% blockId=checkmp3status block="JQ8900 available?"
     //% weight=103
     export function checkmp3status():boolean {
          let _a = pins.createBuffer(4)
