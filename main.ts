@@ -1,5 +1,5 @@
-//% weight=0 color=#338899 icon="\uf0ad" block="jq8900"
-namespace jq8900 {
+//% weight=0 color=#338899 icon="\uf0ad" block="microbittojq8900"
+namespace microbittojq8900 {
      export enum play_mode {
         ALL_REPEAT = 1 ,
         SINGLE_REPEAT = 2,
