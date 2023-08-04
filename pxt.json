@@ -1,6 +1,6 @@
 {
     "name": "microbittojq8900",
-    "version": "0.3",
+    "version": "0.3.1",
     "description": "這是micro:bit控制JQ8900積木",
     "license": "MIT",
     "dependencies": {
